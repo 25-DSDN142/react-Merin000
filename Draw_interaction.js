@@ -77,9 +77,12 @@ function drawInteraction(faces, hands) {
     drawPoints(face.rightEyebrow);
 
     fill(255, 105, 180, 120);
-    ellipse(leftEyeCenter.x, leftEyeCenter.y, 16, 16);  // round pupils
-    ellipse(rightEyeCenter.x, rightEyeCenter.y, 16, 16);
-   
+    noStroke();
+    ellipse(leftEyeCenterX, leftEyeCenterY, leftEyeWidth / 2, leftEyeHeight);
+    ellipse(rightEyeCenterX, rightEyeCenterY, rightEyeWidth / 2, rightEyeHeight);
+    stroke(1);
+    line(leftEyeCenterX, leftEyeCenterY, leftEyeWidth / 2, leftEyeHeight);
+
 
     /*
     Stop drawing on the face here
