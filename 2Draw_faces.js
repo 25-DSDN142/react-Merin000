@@ -64,7 +64,7 @@ function drawInteraction(faces, hands) {
     /*
     Start drawing on the face here
     */
-    noStroke()
+    //noStroke()
     fill(225, 225, 0);
     // fill(get(leftEyeCenterX, leftEyeCenterY))
 
@@ -76,15 +76,16 @@ function drawInteraction(faces, hands) {
     drawPoints(face.rightEye);
     drawPoints(face.rightEyebrow);
 
-    // drawX(rightEyeCenterX,rightEyeCenterY);
-    // drawX(leftEyeCenterX,leftEyeCenterY);
+     //drawX(rightEyeCenterX,rightEyeCenterY);
+     //drawX(leftEyeCenterX,leftEyeCenterY);
 
 
     // drawX(noseTipX,noseTipY); 
 
     // drawX(face.keypoints[332].x,face.keypoints[332].y);
     // drawX(face.keypoints[103].x,face.keypoints[103].y);
-
+    drawX(face.keypoints[200].x,face.keypoints[200].y);
+    drawCircle(face.keypoints[500]);
 
     /*
     Stop drawing on the face here
@@ -101,6 +102,14 @@ function drawX(X, Y) {
   strokeWeight(15)
   line(X - 20, Y - 20, X + 20, Y + 20)
   line(X - 20, Y + 20, X + 20, Y - 20)
+  pop()
+}
+
+function drawCircle() {
+  push()
+
+  strokeWeight(15)
+  ellipse(50,50,80,80);
 
   pop()
 }

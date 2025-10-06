@@ -25,7 +25,7 @@ function drawInteraction(faces, hands) {
 
     // pinchCircle(hand)
     fill(225, 225, 0);
-    ellipse(indexFingerTipX, indexFingerTipY, 30, 30);
+    ellipse(indexFingerTipX, indexFingerTipY, 70, 30);
 
     /*
     Stop drawing on the hands here
@@ -60,12 +60,27 @@ function drawInteraction(faces, hands) {
 
     // fill(225, 225, 0);
     // ellipse(leftEyeCenterX, leftEyeCenterY, leftEyeWidth, leftEyeHeight);
+    let leftEyeCenterX = face.leftEye.centerX;
+    let leftEyeCenterY = face.leftEye.centerY;
+    let leftEyeWidth = face.leftEye.width;
+    let leftEyeHeight = face.leftEye.height;
+
+    let rightEyeCenterX = face.rightEye.centerX;
+    let rightEyeCenterY = face.rightEye.centerY;
+    let rightEyeWidth = face.rightEye.width;
+    let rightEyeHeight = face.rightEye.height;
 
     drawPoints(face.leftEye);
     drawPoints(face.leftEyebrow);
     drawPoints(face.lips);
     drawPoints(face.rightEye);
     drawPoints(face.rightEyebrow);
+
+    fill(255, 105, 180, 120);
+    ellipse(leftEyeCenter.x, leftEyeCenter.y, 16, 16);  // round pupils
+    ellipse(rightEyeCenter.x, rightEyeCenter.y, 16, 16);
+   
+
     /*
     Stop drawing on the face here
     */
@@ -74,6 +89,8 @@ function drawInteraction(faces, hands) {
   //------------------------------------------------------
   // You can make addtional elements here, but keep the face drawing inside the for loop. 
 }
+
+//
 
 
 function drawConnections(hand) {
